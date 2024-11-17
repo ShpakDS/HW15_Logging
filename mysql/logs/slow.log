@@ -1,0 +1,78 @@
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 0  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2024-11-17T18:01:17.012728Z
+# User@Host: testuser[testuser] @ localhost []  Id:     9
+# Query_time: 2.000841  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+use testdb;
+SET timestamp=1731866475;
+SELECT SLEEP(2);
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2024-11-17T18:26:50.134610Z
+# User@Host: testuser[testuser] @ localhost []  Id:     8
+# Query_time: 5.006287  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1731868005;
+Select SLEEP(5);
+# Time: 2024-11-17T18:36:49.473091Z
+# User@Host: testuser[testuser] @ localhost []  Id:     8
+# Query_time: 3.005656  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1731868606;
+SELECT SLEEP(3);
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2024-11-17T18:41:31.794656Z
+# User@Host: testuser[testuser] @ localhost []  Id:     8
+# Query_time: 3.010483  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1731868888;
+SELECT SLEEP(3);
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2024-11-17T18:45:32.514439Z
+# User@Host: testuser[testuser] @ localhost []  Id:     8
+# Query_time: 3.003225  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1731869129;
+SELECT SLEEP(3);
+# Time: 2024-11-17T18:45:42.432272Z
+# User@Host: testuser[testuser] @ localhost []  Id:     8
+# Query_time: 5.002541  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1731869137;
+SELECT SLEEP(5);
+/usr/sbin/mysqld, Version: 8.0.40 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+# Time: 2024-11-17T18:50:10.130430Z
+# User@Host: testuser[testuser] @ localhost []  Id:     8
+# Query_time: 3.002386  Lock_time: 0.000000 Rows_sent: 1  Rows_examined: 1
+SET timestamp=1731869407;
+SELECT SLEEP(3);

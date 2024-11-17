@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: testuser
+      MYSQL_PASSWORD: testpass
+      MYSQL_ROOT_HOST: "%"
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/conf.d:/etc/mysql/conf.d
+      - ./mysql/logs:/var/log/mysql
+    command: --slow-query-log=1 --slow-query-log-file=/var/log/mysql/slow.log --long-query-time=1
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.12
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.10.2
+    container_name: logstash
+    volumes:
+      - ./logstash/pipeline:/usr/share/logstash/pipeline
+      - ./mysql/logs:/var/log/mysql # Додано для доступу до slow.log
+    ports:
+      - "5001:5000"
+    depends_on:
+      - elasticsearch
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.12
+    container_name: kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    ports:
+      - "5601:5601"
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  graylog:
+    image: graylog/graylog:5.1
+    container_name: graylog
+    environment:
+      GRAYLOG_HTTP_EXTERNAL_URI: http://localhost:9000/
+      GRAYLOG_ELASTICSEARCH_HOSTS: http://elasticsearch:9200
+      GRAYLOG_PASSWORD_SECRET: "somerandomsecretstring1234567890"
+      GRAYLOG_ROOT_PASSWORD_SHA2: "597f5441e7d174b607873874ed54b974674986ad543e7458e28a038671c9f64c"
+      GRAYLOG_MONGODB_URI: mongodb://mongo:27017/graylog
+    depends_on:
+      - elasticsearch
+      - mongo
+    ports:
+      - "9000:9000"
+      - "12201:12201/udp"
+
+volumes:
+  mongo_data:
